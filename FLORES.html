@@ -35,17 +35,39 @@
 <body class="container">
   
     <div class="texto">
-     <h1>¡Aqui las Flores para las mas Bandida Jejeje!</h1>
-     <p> Aunque no parezca si te tengo aprecio sapa, Te amo amiguita.</p>
-     <div class="audio">
-      <audio controls autoplay>
-          <source src="img\Floricienta.mp3" type="audio/mpeg">
-          <source src="img\Floricienta.m4a" type="audio/mp4a">
-          <source src="img\Floricienta.wav" type="audio/wav">
-          <source src="img\Floricienta.ogg" type="audio/ogg">
-          Tu navegador no soporta el elemento de audio.
-      </audio>
-  </div>
+     <h1>¡Aqui las Flores para las mai panita!</h1>
+     <p> Aunque no parezca si te tengo aprecio sapa, Te amo Sapita.</p>
+   <div class="audio">
+   <audio id="myAudio" controls>
+       <source src="img/Floricienta.mp3" type="audio/mpeg">
+       Tu navegador no soporta el elemento de audio.
+   </audio>
+</div>
+
+<button id="playAudio">Reproducir</button>
+
+<script>
+   // Función para intentar reproducir audio
+   function playAudio() {
+      var audio = document.getElementById('myAudio');
+      audio.play().catch(function(error) {
+         console.log('No se pudo reproducir el audio automáticamente:', error);
+      });
+   }
+
+   // Intentar reproducir automáticamente al cargar
+   document.addEventListener('DOMContentLoaded', function() {
+      // En iOS, normalmente se requiere una interacción del usuario para reproducir audio
+      // así que intentamos reproducir el audio cuando la página se carga
+      playAudio();
+   });
+
+   // Añadir evento al botón para reproducción manual
+   document.getElementById('playAudio').addEventListener('click', function() {
+      playAudio();
+   });
+</script>
+
 
     </div>
     <div class="night"></div>

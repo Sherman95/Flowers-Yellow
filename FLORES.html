@@ -35,7 +35,7 @@
 <body class="container">
   
     <div class="texto">
-     <h1>¡Aqui las Flores para las mai panita!</h1>
+     <h1>¡Aqui las Flores para las mi panita!</h1>
      <p> Aunque no parezca si te tengo aprecio sapa, Te amo Sapita.</p>
    <div class="audio">
    <audio id="myAudio" controls>
@@ -68,6 +68,21 @@
    });
 </script>
 
+<script>
+   audio.addEventListener('play', function() {
+      document.body.style.animation = 'pulse 1s infinite';
+   });
+   
+   audio.addEventListener('pause', function() {
+      document.body.style.animation = 'none';
+   });
+   
+   @keyframes pulse {
+      0% { background-color: #fff; }
+      50% { background-color: #f0e68c; }
+      100% { background-color: #fff; }
+   }
+</script>
 
     </div>
     <div class="night"></div>
